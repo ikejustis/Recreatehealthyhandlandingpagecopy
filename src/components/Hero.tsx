@@ -1,4 +1,4 @@
-import heroImage from '../assets/fbd473b170e07cd5460de2278a78827fdc78cc83.png';
+import heroImage from '../assets/fbd473b170e07cd5460de2278a78827fdc78cc83.png.png';
 
 export function Hero() {
   return (
