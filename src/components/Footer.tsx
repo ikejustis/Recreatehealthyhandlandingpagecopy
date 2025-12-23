@@ -75,7 +75,7 @@ export function Footer() {
               <h4 className="footer-colTitle">Connect</h4>
               <div className="social">
                 <a 
-                  href="#instagram" 
+                  href="https://www.instagram.com/yourhealthyhand/" 
                   className="social__btn"
                 >
                   <Instagram width={20} height={20} color="#72C975" />
