@@ -17,41 +17,13 @@
   color: var(--color-text);
 }
 
-.footer-cta__form {
-  margin: 18px auto 0;
-  max-width: 720px;
+.footer-cta__actions {
+  margin-top: 18px;
   display: flex;
-  flex-direction: column;
-  gap: 12px;
   justify-content: center;
 }
 
-@media (min-width: 640px) {
-  .footer-cta__form {
-    flex-direction: row;
-  }
-}
-
-.input {
-  width: 100%;
-  height: 48px;
-  border-radius: var(--radius-pill);
-  border: 1px solid rgba(0, 0, 0, 0.2);
-  padding: 0 16px;
-  outline: none;
-  transition: border-color 150ms ease, box-shadow 150ms ease;
-}
-
-@media (min-width: 640px) {
-  .input {
-    padding: 0 24px;
-  }
-}
-
-.input:focus {
-  border-color: var(--color-green-500);
-  box-shadow: 0 0 0 4px rgba(114, 201, 117, 0.18);
-}
+/* (Email input removed from footer CTA) */
 
 .footer-divider {
   border-top: 1px solid rgba(0, 0, 0, 0.12);

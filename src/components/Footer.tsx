@@ -16,14 +16,12 @@ export function Footer() {
             Get early access and be among the first to experience a healthier way to live.
           </p>
 
-          {/* Email Signup Form */}
-          <div className="footer-cta__form">
-            <input
-              type="email"
-              placeholder="Your email address"
-              className="input"
-            />
-            <button className="btn btn--primary">
+          <div className="footer-cta__actions">
+            <button
+              className="btn btn--primary"
+              onClick={() => window.open("https://form.typeform.com/to/rvkGk9qc", "_blank")}
+              type="button"
+            >
               Join Waitlist
             </button>
           </div>
