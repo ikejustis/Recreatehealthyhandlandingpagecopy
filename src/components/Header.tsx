@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png.png';
 import { Link, NavLink } from "react-router-dom";
 
 export function Header() {
