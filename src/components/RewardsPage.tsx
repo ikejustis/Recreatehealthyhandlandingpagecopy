@@ -29,7 +29,9 @@ export function RewardsPage() {
             {/* Left Content */}
             <div className="page-hero__content">
               <h1 className="page-hero__title">
-                HealthyRewards - Your Reward Program
+                HealthyRewards -
+                <br />
+                Your Reward Program
               </h1>
               <p className="page-hero__lead body">
                 Earn points for making healthy choices at local businesses

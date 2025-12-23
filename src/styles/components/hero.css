@@ -75,10 +75,19 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  position: relative;
 }
 
 .hero__image {
   width: 100%;
   max-width: 640px;
+  transform: rotate(10deg);
+  filter: drop-shadow(0 16px 24px rgba(31, 87, 33, 0.18));
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero__image {
+    transform: none;
+  }
 }
 
