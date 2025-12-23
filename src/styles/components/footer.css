@@ -1,5 +1,5 @@
 .site-footer {
-  background: var(--color-page-bg);
+  background: linear-gradient(180deg, var(--color-page-bg-1) 0%, var(--color-page-bg-2) 100%);
 }
 
 .footer-cta {

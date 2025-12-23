@@ -1,4 +1,4 @@
-import heroImage from '../assets/fbd473b170e07cd5460de2278a78827fdc78cc83.png.png';
+import heroImage from '../assets/Image (HealthyHand App Screens).png';
 
 export function Hero() {
   return (

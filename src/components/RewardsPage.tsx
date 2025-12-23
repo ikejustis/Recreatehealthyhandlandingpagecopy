@@ -1,5 +1,5 @@
 import { MapPin, Gift, Award } from 'lucide-react';
-import rewardsImage from '../assets/93cee1af153e49f70acc3ce02dd799574fd329e4.png.png';
+import rewardsImage from '../assets/Image (HealthyRewards App Screen).png';
 
 export function RewardsPage() {
   const steps = [

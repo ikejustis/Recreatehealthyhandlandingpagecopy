@@ -1,7 +1,7 @@
 /* Reusable layout + typography helpers */
 .app {
   min-height: 100vh;
-  background: var(--color-page-bg);
+  background: linear-gradient(180deg, var(--color-page-bg-1) 0%, var(--color-page-bg-2) 100%);
 }
 
 .container {
@@ -110,14 +110,14 @@
 }
 
 .btn--primary {
-  background: var(--color-green-900);
-  border-color: var(--color-green-900);
+  background: linear-gradient(180deg, #1f5721 0%, #184a1a 100%);
+  border-color: #1f5721;
   color: var(--color-white);
   box-shadow: var(--shadow-button);
 }
 
 .btn--primary:hover {
-  background: #184a1a;
+  background: linear-gradient(180deg, #184a1a 0%, #123a14 100%);
   border-color: #184a1a;
   color: var(--color-white);
 }

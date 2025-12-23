@@ -1,5 +1,5 @@
 import { Instagram, Linkedin } from 'lucide-react';
-import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png.png';
+import logo from '../assets/Group 1000011543 4.png';
 import { Link } from "react-router-dom";
 
 export function Footer() {
@@ -73,13 +73,17 @@ export function Footer() {
               <h4 className="footer-colTitle">Connect</h4>
               <div className="social">
                 <a 
-                  href="https://www.instagram.com/yourhealthyhand/" 
+                  href="https://www.instagram.com/yourhealthyhand/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="social__btn"
                 >
                   <Instagram width={20} height={20} color="#72C975" />
                 </a>
                 <a 
-                  href="https://www.linkedin.com/company/healthyhandco/" 
+                  href="https://www.linkedin.com/company/healthyhandco/"
+                  target="_blank"
+                  rel="noreferrer"
                   className="social__btn"
                 >
                   <Linkedin width={20} height={20} color="#72C975" />
