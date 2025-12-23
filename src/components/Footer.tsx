@@ -23,7 +23,11 @@ export function Footer() {
               placeholder="Your email address"
               className="input"
             />
-            <button className="btn btn--primary">
+            <button
+              className="footer-cta__submit btn btn--primary"
+              onClick={() => window.open("https://form.typeform.com/to/rvkGk9qc", "_blank")}
+              type="button"
+            >
               Join Waitlist
             </button>
           </div>
