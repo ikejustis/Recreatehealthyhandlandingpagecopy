@@ -1,5 +1,5 @@
 import { Instagram, Linkedin } from 'lucide-react';
-import logo from 'figma:asset/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
 
 interface FooterProps {
   onNavigate?: (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses') => void;
@@ -7,53 +7,53 @@ interface FooterProps {
 
 export function Footer({ onNavigate }: FooterProps) {
   return (
-    <footer className="bg-white">
+    <footer className="site-footer">
       {/* Waitlist CTA Section */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12 sm:py-16 md:py-20">
-        <div className="text-center space-y-4 sm:space-y-6">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721]" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+      <div className="section">
+        <div className="container">
+          <div className="footer-cta">
+          <h2 className="footer-cta__title title-2">
             Be the First to Discover a Healthier Way to Live
           </h2>
-          <p className="text-[#000000] max-w-3xl mx-auto text-sm sm:text-base" style={{ fontWeight: 400 }}>
+          <p className="footer-cta__text body body--black">
             Get early access and be among the first to experience a healthier way to live.
           </p>
 
           {/* Email Signup Form */}
-          <div className="flex flex-col sm:flex-row gap-3 max-w-2xl mx-auto justify-center pt-2">
+          <div className="footer-cta__form">
             <input
               type="email"
               placeholder="Your email address"
-              className="flex-1 px-4 sm:px-6 py-3 rounded-full border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base"
-              style={{ fontWeight: 400 }}
+              className="input"
             />
-            <button className="px-6 sm:px-8 py-3 bg-[#1F5721] text-white rounded-full border-2 border-[#1F5721] hover:bg-white hover:text-[#1F5721] transition-all whitespace-nowrap" style={{ fontWeight: 500 }}>
+            <button className="btn btn--primary">
               Join Waitlist
             </button>
+          </div>
           </div>
         </div>
       </div>
 
       {/* Footer Links */}
-      <div className="border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8 sm:py-12">
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
+      <div className="footer-divider">
+        <div className="container footer-links">
+          <div className="footer-links__grid">
             {/* Brand Column */}
-            <div className="space-y-4 text-center sm:text-left">
-              <img src={logo} alt="HealthyHand" className="h-8 sm:h-10 mx-auto sm:mx-0" />
-              <p className="text-[#000000]/70 text-sm sm:text-base" style={{ fontWeight: 400 }}>
+            <div className="footer-brand">
+              <img src={logo} alt="HealthyHand" className="footer-brand__logo" />
+              <p className="body">
                 Your guide to locally sourced healthy living.
               </p>
             </div>
 
             {/* Explore Column */}
-            <div className="text-center sm:text-left">
-              <h4 className="text-[#1F5721] mb-4" style={{ fontWeight: 600 }}>Explore</h4>
-              <ul className="space-y-3">
+            <div className="footer-brand">
+              <h4 className="footer-colTitle">Explore</h4>
+              <ul className="footer-navList">
                 <li>
                   <button 
                     onClick={() => onNavigate?.('home')}
-                    className="text-[#000000]/70 hover:text-[#72C975] transition-colors text-left text-sm sm:text-base" 
-                    style={{ fontWeight: 400 }}
+                    className="footer-link"
                   >
                     Home
                   </button>
@@ -61,8 +61,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <li>
                   <button 
                     onClick={() => onNavigate?.('how-it-works')}
-                    className="text-[#000000]/70 hover:text-[#72C975] transition-colors text-left text-sm sm:text-base" 
-                    style={{ fontWeight: 400 }}
+                    className="footer-link"
                   >
                     How It Works
                   </button>
@@ -70,8 +69,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <li>
                   <button 
                     onClick={() => onNavigate?.('rewards')}
-                    className="text-[#000000]/70 hover:text-[#72C975] transition-colors text-left text-sm sm:text-base" 
-                    style={{ fontWeight: 400 }}
+                    className="footer-link"
                   >
                     HealthyRewards
                   </button>
@@ -79,8 +77,7 @@ export function Footer({ onNavigate }: FooterProps) {
                 <li>
                   <button 
                     onClick={() => onNavigate?.('for-businesses')}
-                    className="text-[#000000]/70 hover:text-[#72C975] transition-colors text-left text-sm sm:text-base" 
-                    style={{ fontWeight: 400 }}
+                    className="footer-link"
                   >
                     For Businesses
                   </button>
@@ -89,23 +86,23 @@ export function Footer({ onNavigate }: FooterProps) {
             </div>
 
             {/* Connect Column */}
-            <div className="text-center sm:text-left">
-              <h4 className="text-[#1F5721] mb-4" style={{ fontWeight: 600 }}>Connect</h4>
-              <div className="flex gap-3 mb-4 justify-center sm:justify-start">
+            <div className="footer-brand">
+              <h4 className="footer-colTitle">Connect</h4>
+              <div className="social">
                 <a 
                   href="#instagram" 
-                  className="w-10 h-10 bg-[#F0F9ED] rounded-full flex items-center justify-center hover:bg-[#72C975]/20 transition-colors"
+                  className="social__btn"
                 >
-                  <Instagram className="w-5 h-5 text-[#72C975]" />
+                  <Instagram width={20} height={20} color="#72C975" />
                 </a>
                 <a 
                   href="#linkedin" 
-                  className="w-10 h-10 bg-[#F0F9ED] rounded-full flex items-center justify-center hover:bg-[#72C975]/20 transition-colors"
+                  className="social__btn"
                 >
-                  <Linkedin className="w-5 h-5 text-[#72C975]" />
+                  <Linkedin width={20} height={20} color="#72C975" />
                 </a>
               </div>
-              <a href="mailto:hello@healthyhand.com" className="text-[#000000]/70 hover:text-[#72C975] transition-colors text-sm sm:text-base" style={{ fontWeight: 400 }}>
+              <a href="mailto:hello@healthyhand.com" className="footer-link">
                 hello@healthyhand.com
               </a>
             </div>
@@ -114,15 +111,15 @@ export function Footer({ onNavigate }: FooterProps) {
       </div>
 
       {/* Bottom Bar */}
-      <div className="border-t border-gray-200">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-6">
-          <div className="flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-[#000000]/70 text-xs sm:text-sm">
-            <p style={{ fontWeight: 400 }}>© 2025 HealthyHand. All rights reserved.</p>
-            <div className="flex gap-4 sm:gap-6">
-              <a href="#privacy" className="hover:text-[#72C975] transition-colors" style={{ fontWeight: 400 }}>
+      <div className="footer-divider">
+        <div className="container footer-bottom">
+          <div className="footer-bottom__row">
+            <p>© 2025 HealthyHand. All rights reserved.</p>
+            <div className="footer-bottom__links">
+              <a href="#privacy" className="footer-link">
                 Privacy Policy
               </a>
-              <a href="#terms" className="hover:text-[#72C975] transition-colors" style={{ fontWeight: 400 }}>
+              <a href="#terms" className="footer-link">
                 Terms of Service
               </a>
             </div>

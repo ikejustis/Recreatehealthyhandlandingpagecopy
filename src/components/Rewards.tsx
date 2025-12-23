@@ -27,39 +27,35 @@ export function Rewards({ onNavigate }: RewardsProps) {
   ];
 
   return (
-    <section className="bg-white py-12 sm:py-16 md:py-20">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <section className="section">
+      <div className="container">
         {/* Section Header */}
-        <div className="text-center mb-12 sm:mb-16 space-y-3">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721]" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+        <div className="section-header">
+          <h2 className="section-header__title title-2">
             HealthyRewards
           </h2>
-          <p className="text-[#000000] max-w-3xl mx-auto text-sm sm:text-base" style={{ fontWeight: 400 }}>
+          <p className="section-header__body body body--black">
             Earn Points every time you visit, check in, or make a purchase at participating businesses
           </p>
         </div>
 
         {/* Rewards Cards */}
-        <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-4 sm:gap-6 mb-8 sm:mb-10">
+        <div className="rewards-grid">
           {rewards.map((reward, index) => (
             <div
               key={index}
-              className={`p-6 sm:p-8 rounded-2xl transition-all cursor-pointer h-full ${
-                reward.highlighted
-                  ? 'bg-white shadow-lg hover:shadow-xl'
-                  : 'bg-white border border-gray-200 shadow-md hover:shadow-lg'
-              }`}
+              className={`rewards-card ${reward.highlighted ? 'rewards-card--featured' : ''}`}
             >
               {/* Icon */}
-              <div className="w-14 h-14 sm:w-16 sm:h-16 bg-[#72C975] rounded-full flex items-center justify-center mb-4 sm:mb-5 mx-auto">
-                <reward.icon className="w-7 h-7 sm:w-8 sm:h-8 text-white" strokeWidth={2} />
+              <div className="rewards-card__iconWrap" aria-hidden="true">
+                <reward.icon width={32} height={32} color="#ffffff" strokeWidth={2} />
               </div>
 
               {/* Content */}
-              <h3 className="text-lg sm:text-xl text-[#1F5721] mb-3 text-center" style={{ fontWeight: 600 }}>
+              <h3 className="rewards-card__title title-3">
                 {reward.title}
               </h3>
-              <p className="text-[#000000]/70 leading-relaxed text-center text-sm sm:text-base" style={{ fontWeight: 400 }}>
+              <p className="rewards-card__text body">
                 {reward.description}
               </p>
             </div>
@@ -67,11 +63,10 @@ export function Rewards({ onNavigate }: RewardsProps) {
         </div>
 
         {/* CTA Button */}
-        <div className="text-center">
+        <div className="rewards-cta">
           <button 
             onClick={() => onNavigate?.('rewards')}
-            className="px-6 sm:px-8 py-3 bg-[#1F5721] text-white rounded-full border-2 border-[#1F5721] hover:bg-white hover:text-[#1F5721] transition-all" 
-            style={{ fontWeight: 500 }}
+            className="btn btn--primary"
           >
             Learn More About Rewards
           </button>

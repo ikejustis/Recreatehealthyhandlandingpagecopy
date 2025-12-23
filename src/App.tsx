@@ -32,7 +32,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="app">
       <Header currentPage={currentPage} onNavigate={handleNavigate} />
       
       {currentPage === 'home' && (
