@@ -4,6 +4,9 @@
   import path from 'path';
 
   export default defineConfig({
+    // GitHub Pages serves this site from /<repo-name>/, so we set base at build time.
+    // The workflow sets BASE_PATH to "/<repo-name>/".
+    base: process.env.BASE_PATH ?? '/',
     plugins: [react()],
     resolve: {
       extensions: ['.js', '.jsx', '.ts', '.tsx', '.json'],
