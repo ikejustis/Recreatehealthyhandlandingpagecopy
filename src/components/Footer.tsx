@@ -81,7 +81,7 @@ export function Footer() {
                   <Instagram width={20} height={20} color="#72C975" />
                 </a>
                 <a 
-                  href="#linkedin" 
+                  href="https://www.linkedin.com/company/healthyhandco/" 
                   className="social__btn"
                 >
                   <Linkedin width={20} height={20} color="#72C975" />
