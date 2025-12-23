@@ -1,58 +1,34 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
 import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import { Link, NavLink } from "react-router-dom";
 
-interface HeaderProps {
-  currentPage: 'home' | 'how-it-works' | 'rewards' | 'for-businesses';
-  onNavigate: (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses', scrollTo?: string) => void;
-}
-
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-
-  const handleNavigation = (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses') => {
-    onNavigate(page);
-    setIsMobileMenuOpen(false);
-  };
 
   return (
     <header className="site-header">
       <div className="container">
         <div className="site-header__bar">
           {/* Logo */}
-          <button 
-            onClick={() => handleNavigation('home')}
-            className="site-header__logo"
-          >
+          <Link to="/" className="site-header__logo" aria-label="HealthyHand home">
             <img src={logo} alt="HealthyHand" className="site-header__logoImg" />
-          </button>
+          </Link>
 
           {/* Desktop Navigation - Large clickable areas per Fitts's Law */}
           <nav className="site-header__nav" aria-label="Primary">
-            <button 
-              onClick={() => handleNavigation('home')}
-              className={`nav-link ${currentPage === 'home' ? 'nav-link--active' : ''}`}
-            >
+            <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               Home
-            </button>
-            <button 
-              onClick={() => handleNavigation('how-it-works')}
-              className={`nav-link ${currentPage === 'how-it-works' ? 'nav-link--active' : ''}`}
-            >
+            </NavLink>
+            <NavLink to="/how-it-works" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               How It Works
-            </button>
-            <button 
-              onClick={() => handleNavigation('rewards')}
-              className={`nav-link ${currentPage === 'rewards' ? 'nav-link--active' : ''}`}
-            >
+            </NavLink>
+            <NavLink to="/rewards" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               HealthyRewards
-            </button>
-            <button 
-              onClick={() => handleNavigation('for-businesses')}
-              className={`nav-link ${currentPage === 'for-businesses' ? 'nav-link--active' : ''}`}
-            >
+            </NavLink>
+            <NavLink to="/for-businesses" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               For Businesses
-            </button>
+            </NavLink>
           </nav>
 
           {/* Desktop CTA Button - Prominent per Fitts's Law */}
@@ -81,30 +57,35 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
         {isMobileMenuOpen && (
           <div className="mobile-nav">
             <nav className="mobile-nav__stack" aria-label="Mobile">
-              <button 
-                onClick={() => handleNavigation('home')}
-                className={`mobile-nav__link ${currentPage === 'home' ? 'mobile-nav__link--active' : ''}`}
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
-              </button>
-              <button 
-                onClick={() => handleNavigation('how-it-works')}
-                className={`mobile-nav__link ${currentPage === 'how-it-works' ? 'mobile-nav__link--active' : ''}`}
+              </NavLink>
+              <NavLink
+                to="/how-it-works"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 How It Works
-              </button>
-              <button 
-                onClick={() => handleNavigation('rewards')}
-                className={`mobile-nav__link ${currentPage === 'rewards' ? 'mobile-nav__link--active' : ''}`}
+              </NavLink>
+              <NavLink
+                to="/rewards"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 HealthyRewards
-              </button>
-              <button 
-                onClick={() => handleNavigation('for-businesses')}
-                className={`mobile-nav__link ${currentPage === 'for-businesses' ? 'mobile-nav__link--active' : ''}`}
+              </NavLink>
+              <NavLink
+                to="/for-businesses"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 For Businesses
-              </button>
+              </NavLink>
               
               {/* Mobile CTA Button - Centered and prominent */}
               <button 

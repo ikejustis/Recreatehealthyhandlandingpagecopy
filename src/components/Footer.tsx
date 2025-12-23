@@ -1,11 +1,8 @@
 import { Instagram, Linkedin } from 'lucide-react';
 import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import { Link } from "react-router-dom";
 
-interface FooterProps {
-  onNavigate?: (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses') => void;
-}
-
-export function Footer({ onNavigate }: FooterProps) {
+export function Footer() {
   return (
     <footer className="site-footer">
       {/* Waitlist CTA Section */}
@@ -51,36 +48,24 @@ export function Footer({ onNavigate }: FooterProps) {
               <h4 className="footer-colTitle">Explore</h4>
               <ul className="footer-navList">
                 <li>
-                  <button 
-                    onClick={() => onNavigate?.('home')}
-                    className="footer-link"
-                  >
+                  <Link to="/" className="footer-link">
                     Home
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onNavigate?.('how-it-works')}
-                    className="footer-link"
-                  >
+                  <Link to="/how-it-works" className="footer-link">
                     How It Works
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onNavigate?.('rewards')}
-                    className="footer-link"
-                  >
+                  <Link to="/rewards" className="footer-link">
                     HealthyRewards
-                  </button>
+                  </Link>
                 </li>
                 <li>
-                  <button 
-                    onClick={() => onNavigate?.('for-businesses')}
-                    className="footer-link"
-                  >
+                  <Link to="/for-businesses" className="footer-link">
                     For Businesses
-                  </button>
+                  </Link>
                 </li>
               </ul>
             </div>

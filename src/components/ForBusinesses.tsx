@@ -1,10 +1,7 @@
 import { MapPin, TrendingUp, BarChart3 } from 'lucide-react';
+import { Link } from "react-router-dom";
 
-interface ForBusinessesProps {
-  onNavigate?: (page: 'for-businesses', scrollTo?: string) => void;
-}
-
-export function ForBusinesses({ onNavigate }: ForBusinessesProps) {
+export function ForBusinesses() {
   const benefits = [
     {
       icon: MapPin,
@@ -25,12 +22,6 @@ export function ForBusinesses({ onNavigate }: ForBusinessesProps) {
       highlighted: false
     }
   ];
-
-  const handlePartnerClick = () => {
-    if (onNavigate) {
-      onNavigate('for-businesses', 'partner-form');
-    }
-  };
 
   return (
     <section className="section">
@@ -74,12 +65,9 @@ export function ForBusinesses({ onNavigate }: ForBusinessesProps) {
 
         {/* CTA Buttons */}
         <div className="biz-cta">
-          <button 
-            onClick={handlePartnerClick}
-            className="btn btn--primary"
-          >
+          <Link to="/for-businesses#partner-form" className="btn btn--primary">
             Become a Partner
-          </button>
+          </Link>
         </div>
       </div>
     </section>

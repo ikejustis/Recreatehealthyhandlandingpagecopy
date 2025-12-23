@@ -1,10 +1,7 @@
 import { DollarSign, Gift, Heart } from 'lucide-react';
+import { Link } from "react-router-dom";
 
-interface RewardsProps {
-  onNavigate?: (page: 'rewards') => void;
-}
-
-export function Rewards({ onNavigate }: RewardsProps) {
+export function Rewards() {
   const rewards = [
     {
       icon: DollarSign,
@@ -64,12 +61,9 @@ export function Rewards({ onNavigate }: RewardsProps) {
 
         {/* CTA Button */}
         <div className="rewards-cta">
-          <button 
-            onClick={() => onNavigate?.('rewards')}
-            className="btn btn--primary"
-          >
+          <Link to="/rewards" className="btn btn--primary">
             Learn More About Rewards
-          </button>
+          </Link>
         </div>
       </div>
     </section>

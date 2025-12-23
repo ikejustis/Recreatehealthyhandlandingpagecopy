@@ -1,10 +1,7 @@
 import { Search, MapPin, Gift } from 'lucide-react';
+import { Link } from "react-router-dom";
 
-interface HowItWorksProps {
-  onNavigate?: (page: 'how-it-works') => void;
-}
-
-export function HowItWorks({ onNavigate }: HowItWorksProps) {
+export function HowItWorks() {
   const steps = [
     {
       number: '1',
@@ -75,12 +72,9 @@ export function HowItWorks({ onNavigate }: HowItWorksProps) {
 
         {/* Final CTA */}
         <div className="hiw-cta">
-          <button 
-            onClick={() => onNavigate?.('how-it-works')}
-            className="btn btn--primary"
-          >
+          <Link to="/how-it-works" className="btn btn--primary">
             Learn More
-          </button>
+          </Link>
         </div>
       </div>
     </section>
