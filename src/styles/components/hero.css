@@ -18,6 +18,8 @@
 
 .hero__content {
   text-align: center;
+  display: grid;
+  gap: 16px;
 }
 
 @media (min-width: 768px) {
@@ -28,7 +30,6 @@
 
 .hero__lead {
   max-width: 560px;
-  margin: 16px auto 0;
   font-size: 14px;
 }
 
@@ -40,8 +41,7 @@
 
 @media (min-width: 768px) {
   .hero__lead {
-    margin-left: 0;
-    margin-right: 0;
+    max-width: 560px;
   }
 }
 
@@ -55,7 +55,6 @@
 }
 
 .hero__actions {
-  margin-top: 18px;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
@@ -75,6 +74,7 @@
 .hero__media {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 
 .hero__image {
