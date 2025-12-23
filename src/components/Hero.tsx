@@ -23,7 +23,7 @@ export function Hero() {
                 className="hero__cta btn btn--primary"
                 onClick={() => window.open('https://form.typeform.com/to/rvkGk9qc', '_blank')}
               >
-                Join the Waitlist
+                Join Waitlist
               </button>
             </div>
           </div>
