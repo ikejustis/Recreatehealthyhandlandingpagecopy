@@ -1,5 +1,5 @@
 .site-footer {
-  background: var(--color-white);
+  background: var(--color-page-bg);
 }
 
 .footer-cta {
@@ -26,7 +26,7 @@
 /* (Email input removed from footer CTA) */
 
 .footer-divider {
-  border-top: 1px solid rgba(0, 0, 0, 0.12);
+  border-top: 1px solid rgba(31, 87, 33, 0.12);
 }
 
 .footer-links {

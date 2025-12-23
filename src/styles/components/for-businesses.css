@@ -16,8 +16,9 @@
   border-radius: var(--radius-xl);
   transition: box-shadow 150ms ease, transform 150ms ease;
   cursor: pointer;
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  box-shadow: var(--shadow-md);
+  border: 1px solid rgba(31, 87, 33, 0.10);
+  background: var(--color-green-025);
+  box-shadow: var(--shadow-sm);
 }
 
 @media (min-width: 640px) {
@@ -27,13 +28,13 @@
 }
 
 .biz-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card);
   transform: translateY(-1px);
 }
 
 .biz-card--featured {
-  border-color: transparent;
-  box-shadow: var(--shadow-lg);
+  border-color: rgba(31, 87, 33, 0.12);
+  box-shadow: var(--shadow-card);
 }
 
 .biz-card__row {

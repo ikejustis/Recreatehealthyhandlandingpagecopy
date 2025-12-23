@@ -3,6 +3,9 @@
   --font-family: "Lexend Deca", system-ui, -apple-system, Segoe UI, Roboto, Arial,
     sans-serif;
 
+  /* Page background (light green tint, like screenshots) */
+  --color-page-bg: #f6fbf2;
+
   --color-white: #ffffff;
   --color-text: #000000;
   --color-text-muted: rgba(0, 0, 0, 0.7);
@@ -11,11 +14,14 @@
   --color-green-900: #1f5721; /* primary */
   --color-green-500: #72c975; /* accent */
   --color-green-050: #f0f9ed; /* soft bg */
+  --color-green-025: #f3faef; /* card bg */
 
-  --color-border: #e5e5e5;
+  --color-border: rgba(31, 87, 33, 0.12);
   --shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08);
   --shadow-md: 0 4px 10px rgba(0, 0, 0, 0.1);
   --shadow-lg: 0 12px 24px rgba(0, 0, 0, 0.14);
+  --shadow-card: 0 10px 24px rgba(31, 87, 33, 0.12);
+  --shadow-button: 0 10px 18px rgba(31, 87, 33, 0.18);
 
   --radius-lg: 16px;
   --radius-xl: 20px;
@@ -26,6 +32,6 @@
 
 body {
   font-family: var(--font-family);
-  background: var(--color-white);
+  background: var(--color-page-bg);
   color: var(--color-text);
 }

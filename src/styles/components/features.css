@@ -40,8 +40,10 @@
 .feature-card {
   padding: 20px;
   border-radius: var(--radius-xl);
-  border: 1px solid rgba(0, 0, 0, 0.12);
-  transition: box-shadow 150ms ease, transform 150ms ease;
+  border: 1px solid rgba(31, 87, 33, 0.10);
+  background: var(--color-green-025);
+  box-shadow: var(--shadow-sm);
+  transition: box-shadow 150ms ease, transform 150ms ease, background-color 150ms ease;
   cursor: pointer;
 }
 
@@ -52,7 +54,7 @@
 }
 
 .feature-card:hover {
-  box-shadow: var(--shadow-lg);
+  box-shadow: var(--shadow-card);
   transform: translateY(-1px);
 }
 

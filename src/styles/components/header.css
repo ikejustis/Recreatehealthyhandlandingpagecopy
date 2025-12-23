@@ -2,8 +2,8 @@
   position: sticky;
   top: 0;
   z-index: 50;
-  background: var(--color-white);
-  box-shadow: var(--shadow-sm);
+  background: var(--color-page-bg);
+  border-bottom: 1px solid rgba(31, 87, 33, 0.12);
 }
 
 .site-header__bar {
@@ -64,6 +64,18 @@
 
 .nav-link--active {
   color: var(--color-green-500);
+  position: relative;
+}
+
+.nav-link--active::after {
+  content: "";
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 4px;
+  height: 2px;
+  border-radius: 2px;
+  background: var(--color-green-500);
 }
 
 .site-header__cta {

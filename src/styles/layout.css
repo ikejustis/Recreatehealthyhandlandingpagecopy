@@ -1,7 +1,7 @@
 /* Reusable layout + typography helpers */
 .app {
   min-height: 100vh;
-  background: var(--color-white);
+  background: var(--color-page-bg);
 }
 
 .container {
@@ -113,11 +113,13 @@
   background: var(--color-green-900);
   border-color: var(--color-green-900);
   color: var(--color-white);
+  box-shadow: var(--shadow-button);
 }
 
 .btn--primary:hover {
-  background: var(--color-white);
-  color: var(--color-green-900);
+  background: #184a1a;
+  border-color: #184a1a;
+  color: var(--color-white);
 }
 
 .card {
