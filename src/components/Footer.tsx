@@ -1,5 +1,5 @@
 import { Instagram, Linkedin } from 'lucide-react';
-import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import logo from '../assets/Group 1000011543 4.png';
 import { Link } from "react-router-dom";
 
 export function Footer() {
