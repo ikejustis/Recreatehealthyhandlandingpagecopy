@@ -1,10 +1,21 @@
 import heroImage from '../assets/Image (HealthyHand App Screens).png';
+import { Coffee, Dumbbell, Leaf, MapPin, ShoppingBag, Sprout } from "lucide-react";
 
 export function Hero() {
   return (
     <section className="section">
       <div className="container">
-        <div className="hero__grid">
+        <div className="hero">
+          <div className="hero__decor" aria-hidden="true">
+            <Leaf className="hero__decorItem hero__decorItem--1" />
+            <Sprout className="hero__decorItem hero__decorItem--2" />
+            <Dumbbell className="hero__decorItem hero__decorItem--3" />
+            <MapPin className="hero__decorItem hero__decorItem--4" />
+            <Coffee className="hero__decorItem hero__decorItem--5" />
+            <ShoppingBag className="hero__decorItem hero__decorItem--6" />
+          </div>
+
+          <div className="hero__grid">
           {/* Left Content */}
           <div className="hero__content">
             <h1 className="title-1">
@@ -35,6 +46,7 @@ export function Hero() {
               alt="HealthyHand App Screens" 
               className="hero__image"
             />
+          </div>
           </div>
         </div>
       </div>

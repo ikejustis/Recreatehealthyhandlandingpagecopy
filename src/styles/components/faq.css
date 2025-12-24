@@ -70,7 +70,7 @@
 .faq-item__chevron {
   transition: transform 150ms ease;
   flex: 0 0 auto;
-  color: var(--color-text-faint);
+  color: var(--color-green-500);
 }
 
 .faq-item__chevron--open {
