@@ -40,35 +40,35 @@ export function FAQ() {
   ];
 
   return (
-    <section className="section">
-      <div className="container faq__container">
-        <h2 className="faq__title title-2 center">
+    <section className="py-12 sm:py-16 md:py-20">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
+        <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721] text-center mb-8 sm:mb-12" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
           Frequently Asked Questions
         </h2>
 
-        <div className="faq__list">
+        <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => (
             <div 
               key={index} 
-              className="faq-item"
+              className="bg-white border border-[#E5E5E5] rounded-xl overflow-hidden"
             >
               <button
                 onClick={() => setOpenFaq(openFaq === index ? null : index)}
-                className="faq-item__button"
+                className="w-full px-4 sm:px-6 py-4 sm:py-5 flex items-center justify-between gap-4 text-left hover:bg-[#F5F5F5] transition-colors"
               >
-                <span className="faq-item__question">
+                <span className="text-[#000000] text-sm sm:text-base flex-1" style={{ fontWeight: 500 }}>
                   {faq.question}
                 </span>
                 <ChevronDown 
-                  width={20}
-                  height={20}
-                  className={`faq-item__chevron ${openFaq === index ? 'faq-item__chevron--open' : ''}`}
+                  className={`w-5 h-5 sm:w-6 sm:h-6 text-[#72C975] transition-transform flex-shrink-0 ${
+                    openFaq === index ? 'rotate-180' : ''
+                  }`}
                 />
               </button>
               
               {openFaq === index && (
-                <div className="faq-item__answerWrap">
-                  <p className="body">
+                <div className="px-4 sm:px-6 pb-4 sm:pb-5">
+                  <p className="text-[#000000]/70 leading-relaxed text-sm sm:text-base" style={{ fontWeight: 400 }}>
                     {faq.answer}
                   </p>
                 </div>

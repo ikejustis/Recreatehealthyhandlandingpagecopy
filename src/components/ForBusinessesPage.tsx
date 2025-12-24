@@ -1,5 +1,6 @@
-import { MapPin, TrendingUp, BarChart3 } from 'lucide-react';
+import { MapPin, TrendingUp, BarChart3, ChevronDown } from 'lucide-react';
 import { useState } from 'react';
+import { BusinessFAQ } from './BusinessFAQ';
 
 export function ForBusinessesPage() {
   const [formData, setFormData] = useState({
@@ -43,59 +44,62 @@ export function ForBusinessesPage() {
   };
 
   return (
-    <div className="page">
+    <div className="min-h-screen bg-white">
       {/* Hero Section */}
-      <section className="section">
-        <div className="container">
-          <div className="page-narrow center stack">
-            <h1 className="page-hero__title center">Grow Your Business with HealthyHand</h1>
-            <p className="body">
-              Connect with health-conscious customers and increase foot traffic to your business
-            </p>
-            <div>
-              <button
-                onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
-                className="btn btn--primary"
-              >
-                Partner With Us
-              </button>
-            </div>
+      <section className="bg-gradient-to-b from-white via-[#F0F9ED]/30 to-white py-12 sm:py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center space-y-6">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#1F5721]" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+            Grow Your Business with HealthyHand
+          </h1>
+          <p className="text-[#000000]/70 text-base sm:text-lg max-w-3xl mx-auto" style={{ fontWeight: 400 }}>
+            Connect with health-conscious customers and increase foot traffic to your business
+          </p>
+          <div className="pt-4">
+            <button 
+              onClick={() => document.getElementById('partner-form')?.scrollIntoView({ behavior: 'smooth' })}
+              className="px-10 sm:px-12 py-4 bg-gradient-to-r from-[#1F5721] to-[#2a7530] text-white rounded-full border-2 border-[#1F5721] hover:from-white hover:to-white hover:text-[#1F5721] hover:border-[#72C975] transition-all shadow-md hover:shadow-lg" 
+              style={{ fontWeight: 500 }}
+            >
+              Partner With Us
+            </button>
           </div>
         </div>
       </section>
 
       {/* Why Partner With Us Section */}
-      <section className="section">
-        <div className="container">
-          <div className="section-header">
-            <h2 className="section-header__title title-2">Why Partner With Us</h2>
-            <p className="section-header__body body">
+      <section className="bg-gradient-to-b from-white to-[#F0F9ED]/20 py-12 sm:py-16 md:py-20">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-12 sm:mb-16">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721] mb-4" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+              Why Partner With Us
+            </h2>
+            <p className="text-[#000000]/70 text-base sm:text-lg" style={{ fontWeight: 400 }}>
               Gain access to thousands of health-conscious customers in your area
             </p>
           </div>
 
           {/* Benefits Cards */}
-          <div className="biz-benefits">
+          <div className="space-y-4 sm:space-y-6">
             {benefits.map((benefit, index) => (
               <div 
                 key={index} 
-                className="biz-card"
+                className="bg-gradient-to-br from-white to-[#F0F9ED]/40 border border-[#E5E5E5] rounded-2xl p-6 sm:p-8 hover:shadow-lg hover:to-[#72C975]/10 transition-all"
               >
-                <div className="biz-card__row">
+                <div className="flex flex-col sm:flex-row items-start gap-4 sm:gap-6">
                   {/* Icon */}
-                  <div className="biz-card__iconWrap" aria-hidden="true">
-                    <benefit.icon width={40} height={40} color="#ffffff" strokeWidth={2} />
+                  <div className="w-16 h-16 sm:w-20 sm:h-20 bg-gradient-to-br from-[#72C975] to-[#5db861] rounded-full flex items-center justify-center flex-shrink-0 mx-auto sm:mx-0 shadow-md">
+                    <benefit.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2} />
                   </div>
 
                   {/* Content */}
-                  <div className="biz-card__content">
+                  <div className="flex-1 text-center sm:text-left">
                     {/* Title */}
-                    <h3 className="biz-card__title title-3">
+                    <h3 className="text-lg sm:text-xl text-[#1F5721] mb-3" style={{ fontWeight: 600 }}>
                       {benefit.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="biz-card__text body">
+                    <p className="text-[#000000]/70 leading-relaxed text-sm sm:text-base" style={{ fontWeight: 400 }}>
                       {benefit.description}
                     </p>
                   </div>
@@ -106,70 +110,86 @@ export function ForBusinessesPage() {
         </div>
       </section>
 
+      {/* Business FAQ Section */}
+      <BusinessFAQ />
+
       {/* Partner Form Section */}
-      <section id="partner-form" className="section">
-        <div className="container">
-          <div className="page-narrow">
-            <div className="section-header">
-              <h2 className="section-header__title title-2">Partner With Us</h2>
-              <p className="section-header__body body">
-                Fill out the form below and our team will get back to you within 24 hours
-              </p>
-            </div>
+      <section id="partner-form" className="bg-white py-12 sm:py-16 md:py-20">
+        <div className="max-w-3xl mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-center mb-8 sm:mb-12">
+            <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721] mb-3 sm:mb-4" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+              Partner With Us
+            </h2>
+            <p className="text-[#000000]/70 text-sm sm:text-base" style={{ fontWeight: 400 }}>
+              Fill out the form below and our team will get back to you within 24 hours
+            </p>
+          </div>
 
           {/* Form */}
-          <form onSubmit={handleSubmit} className="form">
+          <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">
             {/* Name and Business Name Row */}
-            <div className="form__grid2">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label htmlFor="yourName" className="field__label">Your Name</label>
+                <label htmlFor="yourName" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                  Your Name
+                </label>
                 <input
                   type="text"
                   id="yourName"
                   name="yourName"
                   value={formData.yourName}
                   onChange={handleChange}
-                  className="field__control"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base"
+                  style={{ fontWeight: 400 }}
                   required
                 />
               </div>
               <div>
-                <label htmlFor="businessName" className="field__label">Business Name</label>
+                <label htmlFor="businessName" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                  Business Name
+                </label>
                 <input
                   type="text"
                   id="businessName"
                   name="businessName"
                   value={formData.businessName}
                   onChange={handleChange}
-                  className="field__control"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base"
+                  style={{ fontWeight: 400 }}
                   required
                 />
               </div>
             </div>
 
             {/* Email and Phone Row */}
-            <div className="form__grid2">
+            <div className="grid md:grid-cols-2 gap-4 sm:gap-6">
               <div>
-                <label htmlFor="email" className="field__label">Email</label>
+                <label htmlFor="email" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                  Email
+                </label>
                 <input
                   type="email"
                   id="email"
                   name="email"
                   value={formData.email}
                   onChange={handleChange}
-                  className="field__control"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base"
+                  style={{ fontWeight: 400 }}
                   required
                 />
               </div>
               <div>
-                <label htmlFor="phone" className="field__label">Phone</label>
+                <label htmlFor="phone" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                  Phone
+                </label>
                 <input
                   type="tel"
                   id="phone"
                   name="phone"
                   value={formData.phone}
                   onChange={handleChange}
-                  className="field__control"
+                  className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base"
+                  style={{ fontWeight: 400 }}
                   required
                 />
               </div>
@@ -177,52 +197,61 @@ export function ForBusinessesPage() {
 
             {/* Business Type Dropdown */}
             <div>
-              <label htmlFor="businessType" className="field__label">Business Type</label>
-              <select
-                id="businessType"
-                name="businessType"
-                value={formData.businessType}
-                onChange={handleChange}
-                className="field__control"
-                required
-              >
-                <option value="">Select your business type</option>
-                <option value="restaurant">Restaurant</option>
-                <option value="cafe">Cafe</option>
-                <option value="juice-bar">Juice Bar</option>
-                <option value="farmers-market">Farmers Market</option>
-                <option value="wellness-studio">Wellness Studio</option>
-                <option value="gym">Gym/Fitness Center</option>
-                <option value="health-food-store">Health Food Store</option>
-                <option value="other">Other</option>
-              </select>
+              <label htmlFor="businessType" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                Business Type
+              </label>
+              <div className="relative">
+                <select
+                  id="businessType"
+                  name="businessType"
+                  value={formData.businessType}
+                  onChange={handleChange}
+                  className="w-full px-4 py-3 pr-12 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none text-sm sm:text-base appearance-none bg-white cursor-pointer"
+                  style={{ fontWeight: 400 }}
+                  required
+                >
+                  <option value="">Select your business type</option>
+                  <option value="restaurant">Restaurant</option>
+                  <option value="cafe">Cafe</option>
+                  <option value="juice-bar">Juice Bar</option>
+                  <option value="farmers-market">Farmers Market</option>
+                  <option value="wellness-studio">Wellness Studio</option>
+                  <option value="gym">Gym/Fitness Center</option>
+                  <option value="health-food-store">Health Food Store</option>
+                  <option value="other">Other</option>
+                </select>
+                <ChevronDown className="absolute right-4 top-1/2 -translate-y-1/2 w-5 h-5 text-[#72C975] pointer-events-none" />
+              </div>
             </div>
 
             {/* Tell us about your business */}
             <div>
-              <label htmlFor="description" className="field__label">Tell us about your business</label>
+              <label htmlFor="description" className="block text-[#1F5721] mb-2 text-sm sm:text-base" style={{ fontWeight: 500 }}>
+                Tell us about your business
+              </label>
               <textarea
                 id="description"
                 name="description"
                 value={formData.description}
                 onChange={handleChange}
                 rows={5}
-                className="field__control field__textarea"
+                className="w-full px-4 py-3 rounded-lg border border-gray-300 focus:border-[#72C975] focus:outline-none resize-none text-sm sm:text-base"
+                style={{ fontWeight: 400 }}
                 required
               />
             </div>
 
             {/* Submit Button */}
-            <div className="form__actions">
+            <div className="text-center pt-4">
               <button
                 type="submit"
-                className="btn btn--primary"
+                className="px-8 sm:px-10 py-3 bg-gradient-to-r from-[#1F5721] to-[#2a7530] text-white rounded-full border-2 border-[#1F5721] hover:from-white hover:to-white hover:text-[#1F5721] hover:border-[#72C975] transition-all shadow-md hover:shadow-lg"
+                style={{ fontWeight: 500 }}
               >
                 Submit Application
               </button>
             </div>
           </form>
-          </div>
         </div>
       </section>
     </div>
