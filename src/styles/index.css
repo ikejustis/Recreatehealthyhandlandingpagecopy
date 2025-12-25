@@ -1,0 +1,15 @@
+@import url("https://fonts.googleapis.com/css2?family=Lexend+Deca:wght@400;500;600&display=swap");
+
+@import "./reset.css";
+@import "./variables.css";
+@import "./layout.css";
+
+@import "./components/header.css";
+@import "./components/hero.css";
+@import "./components/features.css";
+@import "./components/how-it-works.css";
+@import "./components/rewards.css";
+@import "./components/for-businesses.css";
+@import "./components/faq.css";
+@import "./components/footer.css";
+@import "./components/pages.css";
