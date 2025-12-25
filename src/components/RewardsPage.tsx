@@ -1,5 +1,5 @@
-import { MapPin, Plus, Gift, Award } from 'lucide-react';
-import rewardsImage from 'figma:asset/93cee1af153e49f70acc3ce02dd799574fd329e4.png';
+import { MapPin, Gift, Award } from 'lucide-react';
+import rewardsImage from '../assets/93cee1af153e49f70acc3ce02dd799574fd329e4.png.png';
 
 export function RewardsPage() {
   const steps = [
@@ -21,27 +21,27 @@ export function RewardsPage() {
   ];
 
   return (
-    <div className="min-h-screen bg-white">
+    <div className="page">
       {/* Hero Section */}
-      <section className="bg-gradient-to-b from-white via-[#F0F9ED]/30 to-white py-12 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8 sm:gap-12 items-center">
+      <section className="section">
+        <div className="container">
+          <div className="page-hero__grid">
             {/* Left Content */}
-            <div className="text-center md:text-left space-y-6">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl text-[#1F5721]" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+            <div className="page-hero__content">
+              <h1 className="page-hero__title">
                 HealthyRewards - Your Reward Program
               </h1>
-              <p className="text-[#000000]/70 text-base sm:text-lg" style={{ fontWeight: 400 }}>
+              <p className="page-hero__lead body">
                 Earn points for making healthy choices at local businesses
               </p>
             </div>
 
             {/* Right Content - App Preview */}
-            <div className="flex justify-center">
+            <div className="page-hero__media">
               <img 
                 src={rewardsImage} 
                 alt="HealthyRewards App Screen" 
-                className="w-full max-w-xs"
+                className="page-hero__image"
               />
             </div>
           </div>
@@ -49,27 +49,27 @@ export function RewardsPage() {
       </section>
 
       {/* How It Works Section */}
-      <section className="bg-gradient-to-b from-white to-[#F0F9ED]/20 py-12 sm:py-16 md:py-20">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl text-[#1F5721] text-center mb-12 sm:mb-16" style={{ fontWeight: 600, letterSpacing: '-2px' }}>
+      <section className="section">
+        <div className="container">
+          <h2 className="page-title title-2">
             HealthyRewards - How It Works
           </h2>
 
-          <div className="grid sm:grid-cols-2 md:grid-cols-3 gap-8 sm:gap-12">
+          <div className="steps-grid">
             {steps.map((step, index) => (
-              <div key={index} className="text-center">
+              <div key={index} className="step">
                 {/* Icon */}
-                <div className="w-16 h-16 sm:w-20 sm:h-20 bg-[#72C975] rounded-full flex items-center justify-center mb-4 sm:mb-6 mx-auto">
-                  <step.icon className="w-8 h-8 sm:w-10 sm:h-10 text-white" strokeWidth={2} />
+                <div className="step__iconWrap" aria-hidden="true">
+                  <step.icon width={40} height={40} color="#ffffff" strokeWidth={2} />
                 </div>
 
                 {/* Title */}
-                <h3 className="text-lg sm:text-xl text-[#1F5721] mb-3" style={{ fontWeight: 600 }}>
+                <h3 className="step__title title-3">
                   {step.title}
                 </h3>
 
                 {/* Description */}
-                <p className="text-[#000000]/70 leading-relaxed text-sm sm:text-base" style={{ fontWeight: 400 }}>
+                <p className="body">
                   {step.description}
                 </p>
               </div>

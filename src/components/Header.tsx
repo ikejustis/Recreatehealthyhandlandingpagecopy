@@ -1,77 +1,40 @@
 import { useState } from 'react';
 import { Menu, X } from 'lucide-react';
-import logo from 'figma:asset/e86b313527b29bbb0c11b3330c228e5fa22a2610.png';
+import logo from '../assets/e86b313527b29bbb0c11b3330c228e5fa22a2610.png.png';
+import { Link, NavLink } from "react-router-dom";
 
-interface HeaderProps {
-  currentPage: 'home' | 'how-it-works' | 'rewards' | 'for-businesses';
-  onNavigate: (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses', scrollTo?: string) => void;
-}
-
-export function Header({ currentPage, onNavigate }: HeaderProps) {
+export function Header() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
-  const handleNavigation = (page: 'home' | 'how-it-works' | 'rewards' | 'for-businesses') => {
-    onNavigate(page);
-    setIsMobileMenuOpen(false);
-  };
-
   return (
-    <header className="bg-white sticky top-0 z-50 shadow-sm">
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-4 sm:py-5">
-        <div className="flex items-center justify-between">
+    <header className="site-header">
+      <div className="container">
+        <div className="site-header__bar">
           {/* Logo */}
-          <button 
-            onClick={() => handleNavigation('home')}
-            className="hover:opacity-80 transition-opacity"
-          >
-            <img src={logo} alt="HealthyHand" className="h-8 sm:h-10" />
-          </button>
+          <Link to="/" className="site-header__logo" aria-label="HealthyHand home">
+            <img src={logo} alt="HealthyHand" className="site-header__logoImg" />
+          </Link>
 
           {/* Desktop Navigation - Large clickable areas per Fitts's Law */}
-          <nav className="hidden md:flex items-center gap-1">
-            <button 
-              onClick={() => handleNavigation('home')}
-              className={`px-5 py-2.5 transition-colors ${
-                currentPage === 'home' ? 'text-[#72C975]' : 'text-[#000000] hover:text-[#72C975]'
-              }`}
-              style={{ fontWeight: 500 }}
-            >
+          <nav className="site-header__nav" aria-label="Primary">
+            <NavLink to="/" end className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               Home
-            </button>
-            <button 
-              onClick={() => handleNavigation('how-it-works')}
-              className={`px-5 py-2.5 transition-colors ${
-                currentPage === 'how-it-works' ? 'text-[#72C975]' : 'text-[#000000] hover:text-[#72C975]'
-              }`}
-              style={{ fontWeight: 500 }}
-            >
+            </NavLink>
+            <NavLink to="/how-it-works" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               How It Works
-            </button>
-            <button 
-              onClick={() => handleNavigation('rewards')}
-              className={`px-5 py-2.5 transition-colors ${
-                currentPage === 'rewards' ? 'text-[#72C975]' : 'text-[#000000] hover:text-[#72C975]'
-              }`}
-              style={{ fontWeight: 500 }}
-            >
+            </NavLink>
+            <NavLink to="/rewards" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               HealthyRewards
-            </button>
-            <button 
-              onClick={() => handleNavigation('for-businesses')}
-              className={`px-5 py-2.5 transition-colors ${
-                currentPage === 'for-businesses' ? 'text-[#72C975]' : 'text-[#000000] hover:text-[#72C975]'
-              }`}
-              style={{ fontWeight: 500 }}
-            >
+            </NavLink>
+            <NavLink to="/for-businesses" className={({ isActive }) => `nav-link ${isActive ? 'nav-link--active' : ''}`}>
               For Businesses
-            </button>
+            </NavLink>
           </nav>
 
           {/* Desktop CTA Button - Prominent per Fitts's Law */}
           <button 
             onClick={() => window.open('https://form.typeform.com/to/rvkGk9qc', '_blank')}
-            className="hidden md:block px-6 lg:px-7 py-2.5 bg-gradient-to-r from-[#1F5721] to-[#2a7530] text-white rounded-full border-2 border-[#1F5721] hover:from-white hover:to-white hover:text-[#1F5721] hover:border-[#72C975] transition-all shadow-md hover:shadow-lg" 
-            style={{ fontWeight: 500 }}
+            className="site-header__cta btn btn--primary"
           >
             Join Waitlist
           </button>
@@ -79,63 +42,55 @@ export function Header({ currentPage, onNavigate }: HeaderProps) {
           {/* Mobile Hamburger Button */}
           <button 
             onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-            className="md:hidden p-2 hover:bg-gray-100 rounded-lg transition-colors"
+            className="site-header__menuBtn"
             aria-label="Toggle menu"
           >
             {isMobileMenuOpen ? (
-              <X className="w-6 h-6 text-[#1F5721]" />
+              <X width={24} height={24} color="#1F5721" />
             ) : (
-              <Menu className="w-6 h-6 text-[#1F5721]" />
+              <Menu width={24} height={24} color="#1F5721" />
             )}
           </button>
         </div>
 
         {/* Mobile Menu */}
         {isMobileMenuOpen && (
-          <div className="md:hidden mt-4 pb-4 border-t border-gray-200 pt-4">
-            <nav className="flex flex-col items-center gap-2">
-              <button 
-                onClick={() => handleNavigation('home')}
-                className={`w-full text-center px-5 py-3 transition-colors rounded-lg ${
-                  currentPage === 'home' ? 'text-[#72C975] bg-[#F0F9ED]' : 'text-[#000000] hover:bg-gray-100'
-                }`}
-                style={{ fontWeight: 500 }}
+          <div className="mobile-nav">
+            <nav className="mobile-nav__stack" aria-label="Mobile">
+              <NavLink
+                to="/"
+                end
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 Home
-              </button>
-              <button 
-                onClick={() => handleNavigation('how-it-works')}
-                className={`w-full text-center px-5 py-3 transition-colors rounded-lg ${
-                  currentPage === 'how-it-works' ? 'text-[#72C975] bg-[#F0F9ED]' : 'text-[#000000] hover:bg-gray-100'
-                }`}
-                style={{ fontWeight: 500 }}
+              </NavLink>
+              <NavLink
+                to="/how-it-works"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 How It Works
-              </button>
-              <button 
-                onClick={() => handleNavigation('rewards')}
-                className={`w-full text-center px-5 py-3 transition-colors rounded-lg ${
-                  currentPage === 'rewards' ? 'text-[#72C975] bg-[#F0F9ED]' : 'text-[#000000] hover:bg-gray-100'
-                }`}
-                style={{ fontWeight: 500 }}
+              </NavLink>
+              <NavLink
+                to="/rewards"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 HealthyRewards
-              </button>
-              <button 
-                onClick={() => handleNavigation('for-businesses')}
-                className={`w-full text-center px-5 py-3 transition-colors rounded-lg ${
-                  currentPage === 'for-businesses' ? 'text-[#72C975] bg-[#F0F9ED]' : 'text-[#000000] hover:bg-gray-100'
-                }`}
-                style={{ fontWeight: 500 }}
+              </NavLink>
+              <NavLink
+                to="/for-businesses"
+                className={({ isActive }) => `mobile-nav__link ${isActive ? 'mobile-nav__link--active' : ''}`}
+                onClick={() => setIsMobileMenuOpen(false)}
               >
                 For Businesses
-              </button>
+              </NavLink>
               
               {/* Mobile CTA Button - Centered and prominent */}
               <button 
                 onClick={() => window.open('https://form.typeform.com/to/rvkGk9qc', '_blank')}
-                className="w-full mt-2 px-7 py-3 bg-gradient-to-r from-[#1F5721] to-[#2a7530] text-white rounded-full border-2 border-[#1F5721] hover:from-white hover:to-white hover:text-[#1F5721] hover:border-[#72C975] transition-all shadow-md hover:shadow-lg" 
-                style={{ fontWeight: 500 }}
+                className="mobile-nav__cta btn btn--primary"
               >
                 Join Waitlist
               </button>
